@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Product Page</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script src="https://unpkg.com/cart-localstorage@1.1.4/dist/cart-localstorage.min.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</head>
+<body>
+
+	<!--button to the top-->
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up" style="font-size:48px;color:red"></i></button>
+	<!--navbar with cart functions bootstrap 5-->
+	<!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                
+                		<a href="" class="navbar-brand fa fa-twitter" style="font-size:16px"></a>
+    					<a href="" class="navbar-brand fa fa-facebook" style="font-size:16px"></a>
+    					<a href="" class="navbar-brand fa fa-instagram" style="font-size:16px"></a>
+    					<a href="" class="navbar-brand fa fa-linkedin" style="font-size:16px"></a>
+   						<a href="" class="navbar-brand fa fa-skype" style="font-size:16px"></a>
+
+   				
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedontent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-1">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+
+                            </ul>
+                        </li>
+
+                       
+                    </ul>
+                     <form class="d-flex">
+
+                        <li class="nav-item btn btn-outline-dark" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+							<a class="nav-link fa fa-cart-arrow-down" href="javascript:void(0)" style="font-size:24px"></i></a>
+			  			</li>
+                    </form>
+                    
+                    <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+      
+       <div class="modal-dialog modal-dialog-scrollable">
+		<div class="modal-content">
+	
+			
+				<div class="card-header">
+					<h2>Cart</h2>
+				</div>
+				<div class="card-body">
+					<table class="table">
+						<tbody class="cart">
+						</tbody>
+						<tfoot>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								
+							</td>
+							<td class="text-right">Total: <strong class="total"></strong><a href="" class="btn btn-success">Check out</a></td>
+							<td> 
+								
+						  </td>
+						   <!-- Modal footer -->
+        
+
+						</tfoot>
+					</table>
+
+					 <!-- Modal footer--> 
+					 <div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+					  </div>
+				
+				
+			</div>
+		</div>
+		
+<!--end of modal box cart-->
+      </div>
+    </div>
+  
+ 
+                </div>
+            </div>
+        </nav>
+
+<!--filter section-->
+<div class="container" id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+
+<!--product sections with grid-->	  
+	<div class="container">
+		
+
+		<div class="card-deck mt-4 mb-4 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header filterDiv cars">
+
+					<img src="fresh flower pic/images (67).jpeg" class="d-block reco" style="width:100%;">
+					<h4 class="my-0 font-weight-normal text-center">Purple Vera</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$100</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 1, name: 'Purple Vera', price: 100})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<img src="fresh flower pic/images (68).jpeg" class="d-block reco" style="width:100%;">
+					<h4 class="my-0 font-weight-normal">Tinbella</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$120</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 2, name: 'Tinbella', price: 120})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<img src="fresh flower pic/images (69).jpeg" class="d-block reco" style="width:100%;">
+					<h4 class="my-0 font-weight-normal">Pum Scent Ro</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$130</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 3, name: 'Pum Scent Ro', price: 130})">Add to
+						Cart</button>
+				</div>
+			</div>
+		</div>
+<!--product sections with grid-->	  
+<div class="container">
+	<h2>Products</h2>
+
+	<div class="card-deck mt-4 mb-4 text-center">
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+
+				<img src="fresh flower pic/images (67).jpeg" class="d-block" style="width:100%;">
+				<h4 class="my-0 font-weight-normal">Purple Vera</h4>
+			</div>
+			<div class="card-body">
+				<h3 class="card-title pricing-card-title">$100</h3>
+				<button type="button" class="btn btn-block btn-outline-danger"
+					onClick="cartLS.add({id: 4, name: 'Purple Vera', price: 100})">Add to
+					Cart</button>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+				<img src="fresh flower pic/images (68).jpeg" class="d-block" style="width:100%;">
+				<h4 class="my-0 font-weight-normal">Tinbella</h4>
+			</div>
+			<div class="card-body">
+				<h3 class="card-title pricing-card-title">$120</h3>
+				<button type="button" class="btn btn-block btn-outline-danger"
+					onClick="cartLS.add({id: 5, name: 'Tinbella', price: 120})">Add to
+					Cart</button>
+			</div>
+		</div>
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+				<img src="fresh flower pic/images (69).jpeg" class="d-block" style="width:100%;">
+				<h4 class="my-0 font-weight-normal">Pum Scent Ro</h4>
+			</div>
+			<div class="card-body">
+				<h3 class="card-title pricing-card-title">$130</h3>
+				<button type="button" class="btn btn-block btn-outline-danger"
+					onClick="cartLS.add({id: 6, name: 'Pum Scent Ro', price: 130})">Add to
+					Cart</button>
+			</div>
+		</div>
+	</div>
+	<!--product sections with grid-->	  
+	<div class="container">
+		
+
+		<div class="card-deck mt-4 mb-4 text-center">
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+
+					<img src="fresh flower pic/images (67).jpeg" class="d-block" style="width:100%;">
+					<h4 class="my-0 font-weight-normal">Purple Vera</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$100</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 7, name: 'Purple Vera', price: 100})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<img src="fresh flower pic/images (68).jpeg" class="d-block" style="width:100%;">
+					<h4 class="my-0 font-weight-normal">Tinbella</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$120</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 8, name: 'Tinbella', price: 120})">Add to
+						Cart</button>
+				</div>
+			</div>
+			<div class="card mb-4 shadow-sm">
+				<div class="card-header">
+					<img src="fresh flower pic/images (69).jpeg" class="d-block" style="width:100%;">
+					<h4 class="my-0 font-weight-normal">Pum Scent Ro</h4>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title pricing-card-title">$130</h3>
+					<button type="button" class="btn btn-block btn-outline-danger"
+						onClick="cartLS.add({id: 9, name: 'Pum Scent Ro', price: 130})">Add to
+						Cart</button>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+  <div style="text-align:center">
+    <h5>Follow us on</h5>
+    	<a href="" class="nav-link fa fa-twitter" style="font-size:16px"></a>
+    		<a href="" class="nav-link fa fa-facebook" style="font-size:16px"></a>
+    			<a href="" class="nav-link fa fa-instagram" style="font-size:16px"></a>
+    				<a href="" class="nav-link fa fa-linkedin" style="font-size:16px"></a>
+   						<a href="" class="nav-link fa fa-skype" style="font-size:16px"></a>
+  </div>
+</div>
+
+		<!-- Footer-->
+        <div class="mt-12 p-4 bg-dark text-white text-center" style="width:100%">
+  			<h6>All copyright resevered by Fresh Flowers&copy;,2023</h6>
+		</div>
+
+        <script>
+		function renderCart(items) {
+			const $cart = document.querySelector(".cart")
+			const $total = document.querySelector(".total")
+
+			$cart.innerHTML = items.map((item) => `
+					<tr>
+						<td>#${item.id}</td>
+						<td>${item.name}</td>
+						<td>${item.quantity}</td>
+						<td style="width: 30px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},1)">+</button>
+						</td>
+						<td style="width: 30px;">	
+							<button type="button" class="btn btn-block btn-sm btn-outline-primary"
+								onClick="cartLS.quantity(${item.id},-1)">-</button>
+						</td>
+						<td class="text-right">$${item.price}</td>
+						<td class="text-right"><Button class="btn btn-primary" onClick="cartLS.remove(${item.id})">Delete</Button></td>
+					</tr>`).join("")
+
+			$total.innerHTML = "$" + cartLS.total()
+		}
+		renderCart(cartLS.list())
+		cartLS.onChange(renderCart)
+	</script>
+
+	<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+
+</body>
+</html>
